@@ -1,4 +1,4 @@
-# web-app
+# nichad-web-app
 
 ## Project setup
 ```
