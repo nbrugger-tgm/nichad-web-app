@@ -3,13 +3,11 @@
     <b-navbar variant="primary" type="dark">
       <b-navbar-brand href="#">Ni Chad</b-navbar-brand>
     </b-navbar>
-    <b-container fluid="lg" class="mt-4">
-      <b-row v-if="isLoggedIn">
-        <b-col>Logged in</b-col>
-      </b-row>
-      <b-row v-else class="justify-content-md-center">
+    <ChatFrame v-if="isLoggedIn"/>
+    <b-container v-else fluid="lg" class="mt-4 w-100">
+      <b-row class="justify-content-md-center">
         <b-col cols="12" md="6" lg="4" class="rounded border p-4">
-          <LoginForm  v-if="authAction === AuthAction.LOGIN"/>
+          <LoginForm v-if="authAction === AuthAction.LOGIN"/>
           <RegisterForm v-else/>
         </b-col>
       </b-row>
@@ -22,7 +20,7 @@ import { Component, Vue } from "vue-property-decorator";
 import { AuthAction } from "@/store/MainState";
 import LoginForm from "@/components/LoginForm.vue";
 import RegisterForm from "@/components/RegisterForm.vue";
-
+import ChatFrame from "@/components/ChatFrame.vue";
 @Component({
   computed: {
     isLoggedIn() {
@@ -34,7 +32,8 @@ import RegisterForm from "@/components/RegisterForm.vue";
   },
   components: {
     LoginForm,
-    RegisterForm
+    RegisterForm,
+    ChatFrame
   },
   data() {
     return {

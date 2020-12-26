@@ -2,7 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import VuexPersistence from "vuex-persist";
 import { AuthAction, MainState } from "@/store/MainState";
-import { actions } from "@/store/Actions";
+import {actions, ErrorInfo} from "@/store/Actions";
 
 Vue.use(Vuex);
 
@@ -15,7 +15,9 @@ export default new Vuex.Store({
   getters: {
     isLoggedIn: state => state.userID != null,
     getUserId: state => state.userID,
-    getAuthMethod: state => state.authAction
+    getAuthMethod: state => state.authAction,
+    loading: state => state.loading,
+    error: state => state.error
   },
   mutations: {
     SET_USER_ID: (state: MainState, userId: string) => {
@@ -23,7 +25,8 @@ export default new Vuex.Store({
     },
     SWITCH_AUTH_METHOD_CHANGE: (state: MainState, authAction: AuthAction) => {
       state.authAction = authAction;
-    }
+    },
+    TOGGLE_LOADING: (state: MainState) => state.loading = !state.loading
   },
   actions: actions,
   plugins: [vuexLocal.plugin]

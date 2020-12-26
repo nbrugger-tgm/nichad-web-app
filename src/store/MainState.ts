@@ -1,3 +1,4 @@
+import {ErrorInfo} from "@/store/Actions";
 
 export enum AuthAction {
 	LOGIN,
@@ -7,4 +8,5 @@ export enum AuthAction {
 export class MainState {
 	public userID: string | null = null;
 	public authAction: AuthAction = AuthAction.LOGIN;
+	public loading = false;
 }

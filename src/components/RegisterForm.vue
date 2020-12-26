@@ -37,7 +37,10 @@
         required
       ></b-form-input>
     </b-form-group>
-    <b-button type="submit" variant="primary" class="w-100">Create account</b-button>
+    <b-button type="submit" variant="primary" class="w-100 align-text-top">
+      <div class="p-1 h-100 pt-auto pb-auto" v-if="!loading">Create account</div>
+      <b-spinner label="Loading..." v-else></b-spinner>
+    </b-button>
     <b-link @click="switchToLogin">I have an account already</b-link>
   </b-form>
 </template>
@@ -61,6 +64,11 @@ export default {
       userName: null,
       userID: null
     };
+  },
+  computed: {
+    loading() {
+      return this.$store.getters.loading;
+    }
   }
 };
 </script>
