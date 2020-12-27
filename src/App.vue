@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <b-navbar variant="primary" type="dark">
+  <div id="app" class="h-100">
+    <b-navbar variant="primary" type="dark" v-if="!isLoggedIn">
       <b-navbar-brand href="#">Ni Chad</b-navbar-brand>
     </b-navbar>
     <ChatFrame v-if="isLoggedIn"/>
@@ -45,4 +45,10 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
+#app {
+  //min-height: 100vh;
+  //min-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
 </style>

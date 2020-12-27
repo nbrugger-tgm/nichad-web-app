@@ -13,9 +13,12 @@
     "core-js": "^3.6.5",
     "nichad-client": "file:../rest-client",
     "register-service-worker": "^1.7.1",
+    "split": "^1.0.1",
+    "split-grid": "^1.0.9",
     "vue": "^2.6.12",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2",
+    "vue-split-grid": "^0.8.0",
     "vuex": "^3.4.0",
     "vuex-persist": "^3.1.3"
   },
