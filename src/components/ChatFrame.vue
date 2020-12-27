@@ -23,8 +23,8 @@ export default {
     SplitGridArea,
     SplitGridGutter},
   methods: {
-    select(selectedUser:string) {
-      return 0;
+    select(selectedChat:string) {
+      this.chatId = selectedChat;
     }
   },
   data() {

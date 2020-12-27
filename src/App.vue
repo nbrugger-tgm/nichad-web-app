@@ -51,4 +51,12 @@ export default class App extends Vue {}
   margin: 0;
   padding: 0;
 }
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #007bff;
+  margin: 0;
+  padding: 0;
+}
 </style>

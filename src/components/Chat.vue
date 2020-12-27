@@ -1,15 +1,19 @@
 <template>
   <div>
-    <h2>Chat Frame</h2>
     <p v-if="chatId == null">Select a chat</p>
-    <p v-else>An amazing chat ({{ chatId }})</p>
+    <div class="d-flex flex-col" v-else>
+      <Contact :chatId="chatId"/>
+      <hr/>
+    </div>
   </div>
 
 </template>
 
 <script>
+import Contact from "@/components/Contact";
 export default {
   name: "Chat",
+  components: {Contact},
   props: {
     chatId: {
       type: String,
